@@ -8,7 +8,7 @@ import { nanoid } from 'nanoid';
 
 export class App extends Component {
   state = {
-    contacts: [
+    contacts: this.getLocalData() ?? [
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
       { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
@@ -17,9 +17,9 @@ export class App extends Component {
     filter: '',
   };
 
-  componentDidMount() {
+  getLocalData() {
     const savedContacts = JSON.parse(localStorage.getItem('contacts'));
-    this.setState({ contacts: savedContacts });
+   return savedContacts;
   }
   componentDidUpdate(_, prevState) {
     if (prevState.contacts !== this.state.contacts) {
