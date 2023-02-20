@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import {StyledBtn} from './contactForm.styled';
-import {StyledForm} from './contactForm.styled';
+import { StyledBtn } from './contactForm.styled';
+import { StyledForm } from './contactForm.styled';
 
 export class ContactForm extends Component {
   state = {
@@ -32,7 +32,7 @@ export class ContactForm extends Component {
       <>
         <StyledForm onSubmit={this.handleSubmit}>
           <label htmlFor={this.nameInputId}>
-            <span>Name  </span> 
+            <span>Name </span>
             <input
               type="text"
               name="name"
@@ -45,7 +45,7 @@ export class ContactForm extends Component {
             />
           </label>
           <label htmlFor={this.numberInputId}>
-           <span> Number  </span>
+            <span> Number </span>
             <input
               type="tel"
               name="number"
